@@ -9,18 +9,20 @@ Para equação ![1](img/eq_adveccao.png) não linear à obtenção do método de
 ![](img/q_conservativo2p.png)
 ## Lax-Wendroff de dois passos
 Em contraste com os demais tipos de métodos numéricos para a solução desse problema, o esquema de dois passos de Lax-Wendroff não pode ser construído por uma escolha de aproximações independente de diferenças finitas no espaço e tempo da equação de advecção linear. Na figura (1) é mostrado o estêncil do método de Lax-Wendroff de 2 passos observe que é necessário passos intermediários durante o calculo.
-![1](img/lwestencil.png)
-Estêncil pa o método de Lax-Wendroff de dois passos.
+
+![1](img/lw_estencil.png)
+
+Estêncil para o método de Lax-Wendroff de dois passos.
 
 * 1º passo:
 
-Os valores temporários são calculados através de passos intermediários denotados por sinais de quadrados ($\blacksquare$) nos pontos *j\pm 1/2*. Isso é feito usando diferenças adiantadas no espaço e no tempo, tomando as médias aritméticas de *Q_{j+1/2}^{n}* e *u_{j-1/2}^{n}*, nos dois pontos de grade mais próximos de *u_{j}^{n}*. Logo:
+Os valores temporários são calculados através de passos intermediários denotados por sinais de quadrados ![alt](img/blacksquare.png) nos pontos ![alt](img/j_1_2.png). Isso é feito usando diferenças adiantadas no espaço e no tempo, tomando as médias aritméticas de *Q_{j+1/2}^{n}* e *u_{j-1/2}^{n}*, nos dois pontos de grade mais próximos de *u_{j}^{n}*. Logo:
 
 ![2](img/passo1.png) (2)
 
 * 2º passo:
 
-Utilizando os valores intermediários $Q_{j+1/2}^{n+1/2}$ e $Q_{j-1/2}^{n+1/2}$ ,calculados anteriormente, centralizamos a solução no espaço e tempo simultaneamente. Na forma explícita temos:
+Utilizando os valores intermediários *Q_{j+1/2}^{n+1/2}* e *Q_{j-1/2}^{n+1/2}* ,calculados anteriormente, centralizamos a solução no espaço e tempo simultaneamente. Na forma explícita temos:
 
 ![3](img/passo2.png) (3)
 
@@ -29,9 +31,11 @@ Utilizando os valores intermediários $Q_{j+1/2}^{n+1/2}$ e $Q_{j-1/2}^{n+1/2}$ 
 Resolver a equação discreta \ref{eq:q_conservativo} utilizando o esquema de dois passos de Lax-Wendroff.
 
 Para o domínio espacial
-1.0 &le x &le 0,
+
+> 1.0 <= x <= 0,
+
 e o intervalo de tempo
-0 &le t &le 0.5
+> 0 <= t <= 0.5
 com as seguintes condições iniciais
 
 ![4](img/condicao_inicial.png)
